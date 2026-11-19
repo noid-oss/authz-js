@@ -1,5 +1,7 @@
 # @noid-oss/authz
 
+> **Status: 0.1.0, early.** Tested against the spec vectors with stubbed HTTP and local keys. It has not been run against a real `/v1/check` service or a real Hydra JWKS endpoint yet. Pin the version and expect breaking changes before 1.0.
+
 TypeScript SDK for the authorization contract in `authz-spec`. ESM, types included, Node 22+, one runtime dependency (`jose`).
 
 Rules it enforces:
