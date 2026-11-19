@@ -35,7 +35,7 @@ describe("fixture pin", () => {
     expect(createHash("sha256").update(raw).digest("hex")).toBe(pin.sha256);
     expect(file.vectors).toHaveLength(pin.vectors);
     expect(file.version).toBe(2);
-    expect(file.specVersion).toBe("2.0.0");
+    expect(file.specVersion).toBe("2.1.0");
     expect(file.linkVectors).toHaveLength(pin.linkVectors);
   });
 });
