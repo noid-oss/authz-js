@@ -1,0 +1,10 @@
+{
+  "source": "authz-spec/vectors.json",
+  "specCommit": "15080fc8bd868cbb185af89336e5246df733a7ef",
+  "sha256": "d9d0f506225c2ae45230e0dd68985f5a9f09632ce7b735734f8d7502f25fc2aa",
+  "version": 2,
+  "specVersion": "2.0.0",
+  "vectors": 141,
+  "linkVectors": 15,
+  "relationVectors": 15
+}
