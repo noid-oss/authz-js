@@ -1,10 +1,11 @@
 {
   "source": "authz-spec/vectors.json",
-  "specCommit": "17fc1d09ddc234ad88ec3644758db0eeffb29e65",
-  "sha256": "2ec7ec0edf1d70b51add3ddf351b2aaecd40884540afc1b06e74c07e7ab47298",
+  "specCommit": "5790f65efaa5dabf40ce23ef8acd9ba47beb060e",
+  "sha256": "f68b4ab4b8b08ceb5d9cbcb22859923a3da6c74f820bf91fe7fb2a5457e6c2e9",
   "version": 2,
-  "specVersion": "2.1.0",
+  "specVersion": "2.2.0",
   "vectors": 141,
   "linkVectors": 15,
-  "relationVectors": 16
+  "relationVectors": 16,
+  "bindingVectors": 6
 }
