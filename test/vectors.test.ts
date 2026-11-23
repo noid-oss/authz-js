@@ -27,16 +27,22 @@ const pin = JSON.parse(readFileSync(new URL("./fixtures/vectors.pin.json", impor
   sha256: string;
   vectors: number;
   linkVectors: number;
+  relationVectors: number;
+  bindingVectors: number;
 };
-const file = JSON.parse(raw.toString("utf8")) as { version: number; specVersion: string; linkVectors: LinkVector[]; config: Required<NonNullable<Vector["config"]>>; vectors: Vector[] };
+const file = JSON.parse(raw.toString("utf8")) as { version: number; specVersion: string; linkVectors: LinkVector[]; relationVectors: unknown[]; bindingVectors: unknown[]; config: Required<NonNullable<Vector["config"]>>; vectors: Vector[] };
 
 describe("fixture pin", () => {
   it("vectors.json matches the pinned sha256 (not edited, fully synced)", () => {
     expect(createHash("sha256").update(raw).digest("hex")).toBe(pin.sha256);
     expect(file.vectors).toHaveLength(pin.vectors);
     expect(file.version).toBe(2);
-    expect(file.specVersion).toBe("2.1.0");
+    expect(file.specVersion).toBe("2.2.0");
     expect(file.linkVectors).toHaveLength(pin.linkVectors);
+    // relationVectors and bindingVectors are counted and pinned but not executed here: they cover the
+    // check service (relation graph, brand/app binding), not the SDK.
+    expect(file.relationVectors).toHaveLength(pin.relationVectors);
+    expect(file.bindingVectors).toHaveLength(pin.bindingVectors);
   });
 });
 

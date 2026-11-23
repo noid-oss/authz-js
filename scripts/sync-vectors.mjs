@@ -34,6 +34,6 @@ try {
 }
 copyFileSync(src, dst);
 const data = JSON.parse(srcBuf.toString("utf8"));
-const pin = { source: "authz-spec/vectors.json", specCommit, sha256: sha(srcBuf), version: data.version, specVersion: data.specVersion, vectors: data.vectors.length, linkVectors: data.linkVectors.length, relationVectors: data.relationVectors.length };
+const pin = { source: "authz-spec/vectors.json", specCommit, sha256: sha(srcBuf), version: data.version, specVersion: data.specVersion, vectors: data.vectors.length, linkVectors: data.linkVectors.length, relationVectors: data.relationVectors.length, bindingVectors: data.bindingVectors.length };
 writeFileSync(pinFile, JSON.stringify(pin, null, 2) + "\n");
 console.log(`vectors: copied ${pin.vectors} vectors, sha256 ${pin.sha256}, spec ${pin.specCommit}`);
